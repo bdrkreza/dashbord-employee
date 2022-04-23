@@ -1,0 +1,15 @@
+npm i -g typescript
+
+npm i -g ts-node
+
+
+npm init -y
+tsc --init
+yarn add @types/node
+sudu yarn add -g ts-node
+yarn add express @types/express nodenon ts-node typescript
+
+yarn add  cors @types/cors dotenv 
+
+
+
