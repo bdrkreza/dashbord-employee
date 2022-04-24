@@ -1,3 +1,4 @@
-import AuthCrl from "./auth.controller";
+import authController from "./auth.controller";
+import EmployeeController from "./employee.controller";
 
-export { AuthCrl };
+export { authController, EmployeeController };

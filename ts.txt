@@ -11,5 +11,7 @@ yarn add express @types/express nodenon ts-node typescript
 
 yarn add  cors @types/cors dotenv 
 
+yarn add mongoose
+
 
 

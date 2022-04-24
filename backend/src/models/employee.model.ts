@@ -29,4 +29,6 @@ const employeeSchema = new Schema<IEmployee>({
   },
 });
 
-module.exports = model<IEmployee>("Employee", employeeSchema);
+const Employee = model<IEmployee>("Employee", employeeSchema);
+
+export default Employee;

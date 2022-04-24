@@ -1,20 +1,27 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
+import path from "path";
 import { connectMongoDB } from "./config/database";
 import { errorHandler, notFound } from "./middleware/errorHandler";
-import { authRoute } from "./routes";
+import { employeeRoute } from "./routes";
+const bodyParser = require("body-parser");
 
 dotenv.config();
 const app = express();
 
 const middleware = [
+  bodyParser.urlencoded({
+    extended: true,
+  }),
   express.json(),
   express.urlencoded({ extended: false }),
   cors(),
 ];
 
 app.use(middleware);
+// Static Middleware
+app.use(express.static(path.join(__dirname, "public")));
 //server connect
 connectMongoDB();
 app.get("/", (req: Request, res: Response) => {
@@ -22,7 +29,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // // application routes
-app.use("/api/auth", authRoute);
+// app.use("/api/auth", authRoute);
+app.use("/api/employee", employeeRoute);
 
 // Use Middleware
 app.use(notFound);

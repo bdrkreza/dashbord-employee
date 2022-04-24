@@ -2,8 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import { AuthUser } from "../models";
 import createJWTToken from "../utils/generateToken";
 
-const AuthCrl = {
-  register: (req: Request, res: Response, next: NextFunction) => {
+class AuthCrl {
+  register(req: Request, res: Response, next: NextFunction) {
     AuthUser.find({ email: req.body.email })
       .exec()
       .then((user) => {
@@ -43,9 +43,9 @@ const AuthCrl = {
             });
         }
       });
-  },
+  }
 
-  login: async (req: Request, res: Response, next: NextFunction) => {
+  async login(req: Request, res: Response, next: NextFunction) {
     try {
       const { email, password } = req.body;
       const user = await AuthUser.findOne({ email });
@@ -71,7 +71,7 @@ const AuthCrl = {
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }
-  },
-};
+  }
+}
 
-export default AuthCrl;
+export default new AuthCrl();
