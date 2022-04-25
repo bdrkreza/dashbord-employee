@@ -1,3 +1,4 @@
 import authRoute from "./auth.route";
-import employeeRoute from "./employee.route";
-export { authRoute, employeeRoute };
+import EmployeeRoute from "./employee.route";
+
+export { authRoute, EmployeeRoute };

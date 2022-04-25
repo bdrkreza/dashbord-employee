@@ -3,9 +3,20 @@ import upload from "../utils/fileUpload";
 
 const { Router } = require("express");
 
-const router = Router();
+const EmployeeRoute = () => {
+  const router = Router();
+  router.route("/").get(EmployeeController.getEmployee);
+  router
+    .route("/")
+    .post(upload.single("image"), EmployeeController.addEmployee);
 
-router.route("/").get(EmployeeController.getEmployee);
-router.route("/").post(upload.single("image"), EmployeeController.addEmployee);
+  router
+    .route("/:id")
+    .get(EmployeeController.getEmployeeByID)
+    .delete(EmployeeController.deleteEmployee)
+    .put(EmployeeController.updateEmployee);
 
-export default router;
+  return router;
+};
+
+export default EmployeeRoute;

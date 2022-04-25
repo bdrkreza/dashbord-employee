@@ -5,25 +5,46 @@ const EmployeeController = {
   getEmployee: async (req: Request, res: Response) => {
     try {
       const employee = await Employee.find();
-
       res.status(200).json({
         success: true,
+        error: null,
         data: employee,
+        message: "data request successfully",
       });
-    } catch (error) {
+    } catch (error: any) {
       res.status(500).json({
-        message: `There was an server side error.!`,
+        success: false,
+        error: error.message,
+        data: null,
+        message: "database request failed!",
       });
     }
   },
 
-  //   getEmployeeByID(id: string | undefined):  {
-
-  //   }
+  getEmployeeByID: async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params as { id: string };
+      const employee = await Employee.findById({ _id: id });
+      if (!employee) {
+        res.status(404).json({ message: "employee data collection not found" });
+      }
+      res.status(200).json({
+        success: true,
+        error: null,
+        data: employee,
+        message: "data request successfully",
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        success: false,
+        error: error.message,
+        data: null,
+        message: "database request failed!",
+      });
+    }
+  },
 
   addEmployee: async (req: Request, res: Response) => {
-    console.log(req.file);
-    console.log(req.body);
     try {
       const file = req.file?.filename || "";
       const employee = new Employee({
@@ -31,20 +52,73 @@ const EmployeeController = {
         avatar: file,
       });
       const newEmployee = await employee.save();
-      console.log(employee);
-      return res.status(500).json({ success: true, data: newEmployee });
+      res.status(500).json({
+        success: true,
+        error: null,
+        data: newEmployee,
+        message: "data request successfully",
+      });
     } catch (error: any) {
-      return res.status(500).json({ message: error.message });
+      res.status(500).json({
+        success: false,
+        error: error.message,
+        data: null,
+        message: "database request failed!",
+      });
     }
   },
 
-  //   updateEmployee(id: string, body: {}): Promise<IArticle> {
-  //     return requests.patch(`/Employee/${id}`, body);
-  //   }
+  updateEmployee: async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params as { id: string };
+      const employee = await Employee.findById({ _id: id });
+      if (!employee) {
+        res
+          .status(404)
+          .json({ message: "The employee with the given id was not found" });
+      }
+      const updateEmployee = await Employee.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
+      res.status(200).json({
+        success: true,
+        error: null,
+        data: updateEmployee,
+        message: "The employee was deleted successfully",
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        success: false,
+        error: error.message,
+        data: null,
+        message: "database request failed!",
+      });
+    }
+  },
 
-  //   deleteEmployee(id: string): Promise<IArticle> {
-  //     return requests.delete(`/Employee/${id}`);
-  //   }
+  deleteEmployee: async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params as { id: string };
+      const employee = await Employee.findById({ _id: id });
+      if (!employee) {
+        res.status(404).json({ message: "employee data collection not found" });
+      }
+      const deleteEmployee = await employee?.remove();
+      res.status(200).json({
+        success: true,
+        error: null,
+        data: deleteEmployee,
+        message: "The employee was deleted successfully",
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        success: false,
+        error: error.message,
+        data: null,
+        message: "database request failed!",
+      });
+    }
+  },
 };
 
 export default EmployeeController;

@@ -4,7 +4,8 @@ import express, { Request, Response } from "express";
 import path from "path";
 import { connectMongoDB } from "./config/database";
 import { errorHandler, notFound } from "./middleware/errorHandler";
-import { employeeRoute } from "./routes";
+import { EmployeeRoute } from "./routes";
+
 const bodyParser = require("body-parser");
 
 dotenv.config();
@@ -30,7 +31,7 @@ app.get("/", (req: Request, res: Response) => {
 
 // // application routes
 // app.use("/api/auth", authRoute);
-app.use("/api/employee", employeeRoute);
+app.use("/api/employee", EmployeeRoute);
 
 // Use Middleware
 app.use(notFound);

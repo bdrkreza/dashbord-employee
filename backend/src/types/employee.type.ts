@@ -1,3 +1,5 @@
+import { ErrorRequestHandler } from "express";
+
 export interface IEmployee extends Document {
   name: string;
   avatar?: string;
@@ -5,4 +7,9 @@ export interface IEmployee extends Document {
   age: number;
   salary: number;
   designation: string;
+}
+
+export interface ErrorStatus extends ErrorRequestHandler {
+  code: string;
+  message: string;
 }
