@@ -11,6 +11,10 @@ const employeeSchema = new Schema<IEmployee>({
     type: String,
     default: "url-image",
   },
+  gender: {
+    type: String,
+    required: [true, "employee gender is required"],
+  },
   department: {
     type: String,
     required: [true, "employee department is required"],

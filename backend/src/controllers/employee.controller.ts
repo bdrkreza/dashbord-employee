@@ -1,5 +1,10 @@
 import { Request, Response } from "express";
+import fs from "fs";
 import { Employee } from "../models";
+
+const clearImage = (filePath: any) => {
+  fs.unlink(`./public/uploads/${filePath}`, (err: any) => console.log(err));
+};
 
 const EmployeeController = {
   getEmployee: async (req: Request, res: Response) => {
@@ -77,9 +82,18 @@ const EmployeeController = {
           .status(404)
           .json({ message: "The employee with the given id was not found" });
       }
-      const updateEmployee = await Employee.findByIdAndUpdate(id, req.body, {
-        new: true,
-      });
+
+      const file = req.file?.filename || "";
+      if (file) {
+        clearImage(employee?.avatar);
+      }
+      const updateEmployee = await Employee.findByIdAndUpdate(
+        { _id: id },
+        { ...req.body, avatar: file },
+        {
+          new: true,
+        }
+      );
       res.status(200).json({
         success: true,
         error: null,
@@ -103,6 +117,8 @@ const EmployeeController = {
       if (!employee) {
         res.status(404).json({ message: "employee data collection not found" });
       }
+
+      clearImage(employee?.avatar);
       const deleteEmployee = await employee?.remove();
       res.status(200).json({
         success: true,

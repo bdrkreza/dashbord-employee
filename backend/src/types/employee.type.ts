@@ -3,6 +3,7 @@ import { ErrorRequestHandler } from "express";
 export interface IEmployee extends Document {
   name: string;
   avatar?: string;
+  gender: string;
   department: string;
   age: number;
   salary: number;
