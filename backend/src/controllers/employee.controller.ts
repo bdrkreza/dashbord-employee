@@ -31,7 +31,9 @@ const EmployeeController = {
       const { id } = req.params as { id: string };
       const employee = await Employee.findById({ _id: id });
       if (!employee) {
-        res.status(404).json({ message: "employee data collection not found" });
+        return res
+          .status(404)
+          .json({ message: "employee data collection not found" });
       }
       res.status(200).json({
         success: true,
@@ -40,7 +42,7 @@ const EmployeeController = {
         message: "data request successfully",
       });
     } catch (error: any) {
-      res.status(500).json({
+      res.status(404).json({
         success: false,
         error: error.message,
         data: null,
@@ -52,6 +54,9 @@ const EmployeeController = {
   addEmployee: async (req: Request, res: Response) => {
     try {
       const file = req.file?.filename || "";
+      if (!file) {
+        return res.send(`You must select at least 1 file.`);
+      }
       const employee = new Employee({
         ...req.body,
         avatar: file,
@@ -78,7 +83,7 @@ const EmployeeController = {
       const { id } = req.params as { id: string };
       const employee = await Employee.findById({ _id: id });
       if (!employee) {
-        res
+        return res
           .status(404)
           .json({ message: "The employee with the given id was not found" });
       }
@@ -115,7 +120,9 @@ const EmployeeController = {
       const { id } = req.params as { id: string };
       const employee = await Employee.findById({ _id: id });
       if (!employee) {
-        res.status(404).json({ message: "employee data collection not found" });
+        return res
+          .status(404)
+          .json({ message: "employee data collection not found" });
       }
 
       clearImage(employee?.avatar);

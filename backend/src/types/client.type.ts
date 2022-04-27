@@ -5,12 +5,12 @@ export interface IClient extends Document {
   name: string;
   image: string;
   file: string;
-  companyName: string;
+  company_name: string;
   email: string;
   phone: number;
   date: string;
   currency: string;
-  billMethod: string;
+  bill_method: string;
   location: string;
   description: string;
 }

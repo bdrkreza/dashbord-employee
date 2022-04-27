@@ -22,7 +22,7 @@ const ClientSchema = new Schema<IClient>(
       type: String,
       default: "url-file",
     },
-    companyName: {
+    company_name: {
       type: String,
       required: [true, "company Name is required"],
     },
@@ -45,7 +45,7 @@ const ClientSchema = new Schema<IClient>(
       type: String,
       required: [true, "currency is required"],
     },
-    billMethod: {
+    bill_method: {
       type: String,
       required: [true, "billMethod is required"],
     },

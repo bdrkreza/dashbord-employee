@@ -4,7 +4,12 @@ import express, { Request, Response } from "express";
 import path from "path";
 import { connectMongoDB } from "./config/database";
 import { errorHandler, notFound } from "./middleware/errorHandler";
-import { authRoute, employeeRoute } from "./routes";
+import {
+  authRoute,
+  clientRouter,
+  employeeRoute,
+  projectRouter,
+} from "./routes";
 
 const bodyParser = require("body-parser");
 
@@ -32,6 +37,8 @@ app.get("/", (req: Request, res: Response) => {
 // // application routes
 app.use("/api/auth", authRoute);
 app.use("/api/employee", employeeRoute);
+app.use("/api/project", projectRouter);
+app.use("/api/client", clientRouter);
 
 // Use Middleware
 app.use(notFound);
