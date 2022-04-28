@@ -9,15 +9,37 @@ const clearImage = (filePath: any) => {
 const EmployeeController = {
   getEmployee: async (req: Request, res: Response) => {
     try {
-      const employee = await Employee.find();
+      const pageSize = 10;
+      const page = Number(req.query.pageNumber) || 1;
+
+      // Get search keyword from request and search for partial match
+      const keyword = req.query.keyword
+        ? {
+            name: {
+              $regex: req.query.keyword,
+              $options: "i",
+            } as any,
+          }
+        : {};
+
+      const count = await Employee.countDocuments({ ...keyword });
+
+      const employee = await Employee.find({ ...keyword })
+        .limit(pageSize)
+        .skip(pageSize * (page - 1));
+      const getData = {
+        employee,
+        page,
+        pages: Math.ceil(count / pageSize),
+      };
       res.status(200).json({
         success: true,
         error: null,
-        data: employee,
+        data: getData,
         message: "data request successfully",
       });
     } catch (error: any) {
-      res.status(500).json({
+      res.status(404).json({
         success: false,
         error: error.message,
         data: null,

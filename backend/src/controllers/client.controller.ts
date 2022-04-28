@@ -83,7 +83,7 @@ const ClientController = {
   updateClientByID: async (req: Request, res: Response) => {
     try {
       const { id } = req.params as { id: string };
-      const client = await ClientModel.findOne({ _id: id });
+      const client = await ClientModel.findById({ _id: id });
       if (!client) {
         return res
           .status(404)
