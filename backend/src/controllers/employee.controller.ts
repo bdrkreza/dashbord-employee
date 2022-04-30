@@ -9,7 +9,7 @@ const clearImage = (filePath: any) => {
 const EmployeeController = {
   getEmployee: async (req: Request, res: Response) => {
     try {
-      const pageSize = 10;
+      const pageSize = 2;
       const page = Number(req.query.pageNumber) || 1;
 
       // Get search keyword from request and search for partial match
