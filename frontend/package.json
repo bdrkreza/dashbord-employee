@@ -4,21 +4,33 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:tailwind": "postcss ./src/assets/styles/index.css -o ./src/assets/styles/tailwind.css --env production",
+    "watch:tailwind": "postcss ./src/assets/styles/index.css -o ./src/assets/styles/tailwind.css -w",
+    "start:react": "react-scripts start",
+    "start": "next-run-all -p watch:tailwind start:react",
+    "build": "next run build:tailwind && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "npm:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "yarn:clean": "rm -rf node_modules/ && rm -rf package-lock.json && yarn install && yarn start"
   },
   "dependencies": {
+    "@material-tailwind/react": "0.3.4",
     "next": "12.1.5",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "17.0.30",
     "@types/react": "18.0.8",
     "@types/react-dom": "18.0.3",
+    "autoprefixer": "^10.4.5",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
     "typescript": "4.6.4"
   }
 }

@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.marLeft {
+  margin-left: 80px;
+}
+
+.marRight {
+  margin-left: 300px;
+}
