@@ -47,7 +47,7 @@ export default function AppHeader() {
   return (
     <React.Fragment>
       {/* Code block starts */}
-      <nav className="w-full bg-gray-800  shadow" ref={domNode}>
+      <nav className="w-full bg-gray-800  shadow fixed" ref={domNode}>
         <div className="container px-6 h-16 flex justify-between items-center lg:items-stretch mx-auto">
           <div className="flex items-center ">
             <div className="mr-10 flex items-center">

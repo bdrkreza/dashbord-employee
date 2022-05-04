@@ -13,7 +13,7 @@ const DefaultLayout = ({ children }: any) => {
 
         <div className="flex-1 h-screen" style={{ marginLeft: "80px" }}>
           <AppHeader />
-          <div style={{ minHeight: "80%" }} className="p-10">
+          <div style={{ minHeight: "80%" }} className="p-10 mt-20">
             {children}
           </div>
           <AppFooter />
