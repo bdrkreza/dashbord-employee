@@ -28,7 +28,7 @@ export const status = [
     title: "Employees",
     count: "125",
     persistence: "4.5%",
-    color: "sky",
+    color: "blue",
     icon: FaUserFriends,
   },
 ];

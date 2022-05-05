@@ -1,73 +1,57 @@
-import Chart from "chart.js/auto";
+import {
+  BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
+  Title,
+  Tooltip,
+} from "chart.js";
 import React from "react";
+import { Bar } from "react-chartjs-2";
 import ProjectManage from "./projectManage";
 
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top" as const,
+    },
+    title: {
+      display: true,
+      text: "Project Bar chart",
+    },
+  },
+};
+
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: "Project A",
+      data: [65, 78, 66, 44, 56, 67, 75, 60, 45, 58, 55, 45],
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+    },
+    {
+      label: "Project B",
+      data: [40, 68, 86, 74, 56, 60, 65, 42, 35, 65, 75, 45],
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+    },
+  ],
+};
+
 export default function ProjectSurvey() {
-  const canvasEl = React.useRef(null);
-
-  const colors = {
-    purple: {
-      default: "rgb(255, 99, 132)",
-      half: "rgb(204 251 241 / 0)",
-      quarter: "rgb(100, 200, 220)",
-      zero: "rgba(149, 76, 233, 0)",
-    },
-    indigo: {
-      default: "#3b82f6",
-      quarter: "#4ade80",
-    },
-  };
-
-  React.useEffect(() => {
-    const ctx = canvasEl?.current?.getContext("2d");
-
-    const gradient = ctx.createLinearGradient(0, 16, 0, 600);
-    gradient.addColorStop(0, colors.purple.half);
-    gradient.addColorStop(0.65, colors.purple.quarter);
-    gradient.addColorStop(1, colors.purple.zero);
-
-    const weight = [60.0, 60.2, 59.1, 61.4, 59.9, 60.2, 59.8, 58.6, 59.6, 59.2];
-
-    const labels = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Nov",
-      "Dec",
-    ];
-
-    const data = {
-      labels: labels,
-      datasets: [
-        {
-          backgroundColor: gradient,
-          label: "My First Dataset",
-          data: weight,
-          fill: true,
-          borderWidth: 2,
-          borderColor: colors.purple.default,
-          lineTension: 0.2,
-          pointBackgroundColor: colors.purple.default,
-          pointRadius: 3,
-        },
-      ],
-    };
-    const config = {
-      type: "line",
-      data: data,
-    };
-    const myLineChart = new Chart(ctx, config);
-
-    return function cleanup() {
-      myLineChart.destroy();
-    };
-  });
   return (
     <div className="grid xl:grid-cols-3 sm:grid-cols-1 md:grid-flow-row-dense gap-10 mt-20">
       <div className="xl:col-span-2 w-full h-full bg-gray-100 md:p-10 p-4 rounded-xl">
@@ -100,16 +84,16 @@ export default function ProjectSurvey() {
               <p className="w-20 text-xs leading-none ml-1.5">Components</p>
             </div>
             <div className="flex items-center ml-4">
-              <div className="w-4 h-4 bg-yellow-300 rounded-full" />
+              <div className="w-4 h-4 bg-sky-400 rounded-full" />
               <p className="w-20 text-xs leading-none ml-1.5">Templates</p>
             </div>
           </div>
         </div>
         <div className="mt-8">
-          <canvas id="myChart" ref={canvasEl} height={528} width={1760} />
+          <Bar options={options} data={data} height={528} width={1760} />
         </div>
       </div>
-      <div className="">
+      <div>
         <ProjectManage />
       </div>
     </div>

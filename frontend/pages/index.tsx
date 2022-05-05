@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import React from "react";
-import { ClientSurvey, ProjectSurvey, StatusCard } from "../components";
+import {
+  ClientSurvey,
+  InvoiceTable,
+  ProjectStatusTable,
+  ProjectSurvey,
+  StatusCard,
+} from "../components";
 import { status } from "./api/status_api";
 
 interface IProps {
@@ -22,6 +28,8 @@ const Home: NextPage = () => {
       <StatusCard status={statusApi} />
       <ProjectSurvey />
       <ClientSurvey />
+      <InvoiceTable />
+      <ProjectStatusTable />
     </div>
   );
 };

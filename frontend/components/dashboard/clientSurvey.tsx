@@ -89,7 +89,7 @@ export default function ProjectSurvey() {
   return (
     <div className="grid xl:grid-cols-3 sm:grid-cols-1 md:grid-flow-row-dense gap-10 mt-20">
       <div className="xl:col-span-2 w-full min-h-fit  bg-gray-100 md:p-10 p-4 rounded-xl">
-        <div className="lg:flex justify-between w-full items-center shadow-lg rounded-xl px-2 p-4 bg-pink-300 -mt-20 ">
+        <div className="flex justify-between w-full items-center shadow-lg rounded-xl px-2 p-4 bg-pink-300 -mt-20 ">
           <div className="py-3 md:px-4 flex items-center  rounded-xl">
             <p className="font-medium leading-none text-center text-gray-500">
               Client Survey
