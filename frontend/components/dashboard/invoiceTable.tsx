@@ -82,10 +82,10 @@ const InvoiceTable = () => {
                 </tr>
               </thead>
               <tbody>
-                {invoices.map((invs) => {
+                {invoices.map((invs: any, index) => {
                   return (
                     <tr
-                      key={invs.name}
+                      key={index}
                       className="h-20  border-gray-300 dark:border-gray-200 border-b"
                     >
                       <td className="text-sm whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4 pl-5">

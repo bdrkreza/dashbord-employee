@@ -3,10 +3,11 @@ import React from "react";
 import {
   ClientSurvey,
   InvoiceTable,
-  ProjectStatusTable,
+  ProjectReportTable,
   ProjectSurvey,
   StatusCard,
 } from "../components";
+import { team } from "./api/projectTeam";
 import { status } from "./api/status_api";
 
 interface IProps {
@@ -16,11 +17,30 @@ interface IProps {
   color: string;
   icon: any;
 }
+
+interface IProject {
+  projectName: string;
+  image: string;
+  color: string;
+  stage: string;
+  persistance: string;
+  task: string;
+  budget: string;
+  date: string;
+  teamLeader: string;
+  team: {
+    img: string;
+  }[];
+}
+[];
+
 const Home: NextPage = () => {
   const [statusApi, setStatusApi] = React.useState<IProps[]>([]);
+  const [project, setProject] = React.useState<IProject[]>([]);
 
   React.useEffect(() => {
     setStatusApi(status);
+    setProject(team);
   }, []);
 
   return (
@@ -29,7 +49,7 @@ const Home: NextPage = () => {
       <ProjectSurvey />
       <ClientSurvey />
       <InvoiceTable />
-      <ProjectStatusTable />
+      <ProjectReportTable project={project} />
     </div>
   );
 };

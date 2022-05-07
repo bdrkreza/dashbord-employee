@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import { IoMdNotificationsOutline } from "react-icons/io";
+import { IoIosArrowBack, IoMdNotificationsOutline } from "react-icons/io";
 import user from "../../public/rkreza.jpg";
 import english from "../../public/united-states.svg";
 import Language from "./header/language";
@@ -33,7 +33,7 @@ let useClickOutSide = (handler: any) => {
   return domNode;
 };
 
-export default function AppHeader() {
+export default function AppHeader({ open, setOpen }: any) {
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState(false);
   const [profile, setProfile] = useState(false);
@@ -47,10 +47,24 @@ export default function AppHeader() {
   return (
     <React.Fragment>
       {/* Code block starts */}
-      <nav className="w-full bg-gray-800  shadow fixed" ref={domNode}>
+      <nav
+        className="w-full bg-gray-800  fixed shadow-md transition-all duration-300  z-10 w-ful "
+        ref={domNode}
+      >
         <div className="container px-6 h-16 flex justify-between items-center lg:items-stretch mx-auto">
-          <div className="flex items-center ">
-            <div className="mr-10 flex items-center">
+          <div className="flex items-center justify-between ">
+            {/* SideBar Toggle */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="focus:outline-none p-1 sm:block  -ml-40 bg-gray-900 rounded-full shadow-md"
+            >
+              <IoIosArrowBack
+                className={`${
+                  open ? "rotate-30" : "-rotate-180"
+                } h-6 w-6 transition-all duration-300 text-white transform`}
+              />
+            </button>
+            <div className="m-10 flex items-center">
               <svg
                 aria-label="Home"
                 id="logo"
