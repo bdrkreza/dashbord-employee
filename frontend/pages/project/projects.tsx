@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectCard, ProjectList, ProjectTopBar } from "../../components";
+import { AddProject, ProjectCard, ProjectList } from "../../components";
 import { team } from "../api/projectTeam";
 interface IProject {
   projectName: string;
@@ -24,8 +24,8 @@ export default function Projects() {
   }, []);
   return (
     <div>
-      <ProjectTopBar />
       <ProjectList />
+      <AddProject />
       <ProjectCard project={project} />
     </div>
   );

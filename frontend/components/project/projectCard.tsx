@@ -10,19 +10,15 @@ import { GrView } from "react-icons/gr";
 export default function ProjectCard({ project }: any) {
   const [show, setShow] = React.useState(false);
   return (
-    <div className="divide-solid divide-y-2 divide-red-400 mt-10">
-      <h1 className="text-2xl font-sans font-bold mb-2">
-        Recent Project Update
-      </h1>
-
+    <>
       <div className="w-full grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-3 gap-1">
         {project.map((item: any, index: any) => {
           return (
             <div
               key={index}
-              className="flex items-center justify-center w-full h-full py-4 px-4"
+              className="flex items-center  justify-center w-full h-full py-4 px-4"
             >
-              <div className="bg-white dark:bg-gray-800 rounded shadow max-w-xl py-6 sm:px-8 px-4">
+              <div className="bg-white border-x-2  dark:bg-gray-800 rounded shadow  max-w-xl py-6 sm:px-8 px-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xl font-semibold leading-4 text-gray-800 dark:text-gray-100">
@@ -117,6 +113,6 @@ export default function ProjectCard({ project }: any) {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }

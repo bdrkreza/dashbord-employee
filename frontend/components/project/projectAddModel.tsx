@@ -6,7 +6,7 @@ export default function ProjectAddModel({ onCancel }: any) {
         <div className="relative w-full py-5  bg-white my-6 mx-auto max-w-3xl">
           <div className="px-7">
             <p className="text-xl font-semibold leading-tight text-gray-800">
-              Add Project
+              Add
             </p>
             <div className="grid w-full grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-7 mt-7 ">
               <div>
