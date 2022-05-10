@@ -8,7 +8,11 @@ const _nav = [
   { title: "Dashboard", link: "/", icon: MdDashboard },
   { title: "Projects", link: "/project/projects", icon: AiFillProject },
   { title: "Employees", link: "/employee/employee", icon: FiUsers },
-  { title: "Management", link: "/management/requests", icon: MdManageAccounts },
+  {
+    title: "Management",
+    link: "/management/management",
+    icon: MdManageAccounts,
+  },
   { title: "Holidays", link: "/holidays/holidays", icon: FiCoffee },
   {
     title: "Attendance",
