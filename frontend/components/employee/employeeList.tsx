@@ -2,14 +2,18 @@ import Image from "next/image";
 import React from "react";
 import { BiBookAdd } from "react-icons/bi";
 import { RiProfileFill } from "react-icons/ri";
-import { employee_job } from "../../pages/api/employee";
+import { IEmployee } from "../../Types";
 
-export default function EmployeeList() {
+interface IProps {
+  employee: IEmployee[] | null;
+}
+
+export default function EmployeeList({ employee }: IProps) {
   return (
     <>
       <div className="grid grid-flow-row-dense grid-cols-2 gap-10">
-        {employee_job.map(
-          ({ name, img, designation, describe }: any, index) => {
+        {employee?.map(
+          ({ name, img, designation, describe }: IEmployee, index) => {
             return (
               <div
                 key={index}

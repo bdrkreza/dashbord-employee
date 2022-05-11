@@ -1,4 +1,6 @@
-export const team = [
+import { IProject } from "../../Types";
+
+export const team: IProject[] = [
   {
     projectName: "UX Design & Visual Strategy",
     image: "https://cdn.tuk.dev/assets/templates/olympus/projects.png",

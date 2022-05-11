@@ -1,3 +1,5 @@
+import AddAttendance from "./attendance/addAttendance";
+import AttendanceTopBar from "./attendance/attendanceTopBar";
 import AppFooter from "./common/appFooter";
 import AppHeader from "./common/appHeader";
 import AppSidebar from "./common/appSidebar";
@@ -34,4 +36,6 @@ export {
   AddEmployee,
   HolidaysTable,
   HolidaysTopBar,
+  AttendanceTopBar,
+  AddAttendance,
 };

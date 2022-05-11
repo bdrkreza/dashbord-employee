@@ -1,15 +1,20 @@
 import React from "react";
+import { IStatus } from "../../Types";
 
-export default function StatusCard({ status }: any) {
+type IProps = {
+  status: IStatus[] | null;
+};
+
+export default function StatusCard({ status }: IProps) {
   return (
     <>
       {/* Card is full width. Use in 12 col grid for best view. */}
       {/* Card code block start */}
       <div className="w-full grid sm:grid-cols-1 font-serif md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <>
-          {status.map(
+          {status?.map(
             (
-              { title, count, persistence, color, icon: Icon }: any,
+              { title, count, persistence, color, icon: Icon }: IStatus,
               index: number
             ) => {
               return (

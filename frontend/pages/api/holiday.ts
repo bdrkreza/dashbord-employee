@@ -1,4 +1,6 @@
-export const holiday_api = [
+import { IHoliday } from "../../Types";
+
+export const holiday_api: IHoliday[] = [
   {
     id: "01",
     weakly: "tuesday",
