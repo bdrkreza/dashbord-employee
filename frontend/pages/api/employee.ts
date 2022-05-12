@@ -6,8 +6,9 @@ import manImg1 from "../../public/man-1.svg";
 import manImg2 from "../../public/man2.svg";
 import woman2 from "../../public/woman-2.svg";
 import woman1 from "../../public/woman1.svg";
+import { IEmployeeCount } from "../../Types";
 
-export const employee_api = [
+export const employee_api: IEmployeeCount[] = [
   {
     title: "Total Employee",
     count: "26",

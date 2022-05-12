@@ -1,6 +1,6 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import React from "react";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 let options = {
@@ -77,7 +77,7 @@ export default function CountryWiseSales() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <Pie options={options} data={data} width={250} height={250} />
+            <Doughnut options={options} data={data} width={250} height={250} />
           </div>
           <div className="m-2 space-y-2 divide-y-2">
             {Cdata.map((country: any) => (

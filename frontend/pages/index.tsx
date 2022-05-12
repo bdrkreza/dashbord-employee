@@ -7,35 +7,12 @@ import {
   ProjectSurvey,
   StatusCard,
 } from "../components";
+import { IProject, IStatus } from "../Types";
 import { team } from "./api/projectTeam";
 import { status } from "./api/status_api";
 
-interface IProps {
-  title: string;
-  count: string;
-  persistence: string;
-  color: string;
-  icon: any;
-}
-
-interface IProject {
-  projectName: string;
-  image: string;
-  color: string;
-  stage: string;
-  persistance: string;
-  task: string;
-  budget: string;
-  date: string;
-  teamLeader: string;
-  team: {
-    img: string;
-  }[];
-}
-[];
-
 const Home: NextPage = () => {
-  const [statusApi, setStatusApi] = React.useState<IProps[]>([]);
+  const [statusApi, setStatusApi] = React.useState<IStatus[]>([]);
   const [project, setProject] = React.useState<IProject[]>([]);
 
   React.useEffect(() => {
