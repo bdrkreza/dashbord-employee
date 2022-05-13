@@ -15,6 +15,18 @@ export interface IAttendance {
   icon: IconType;
 }
 
+export interface IAttendanceTable {
+  id: string;
+  date: string;
+  punchIn_time: string;
+  punchOut_time: string;
+  break_time: string;
+  half_day: boolean;
+  full_day: boolean;
+  over_time: string;
+  total: string;
+}
+
 export interface IHoliday {
   id: string;
   weakly: string;
@@ -37,6 +49,22 @@ export interface IEmployeeCount {
   icon: IconType;
 }
 
+export interface IDepartment {
+  name: string;
+  person: number;
+  icon: IconType;
+  color: string;
+}
+
+export interface IDepartmentTeam {
+  id: string;
+  team_head: string;
+  department: string;
+  under_work: string;
+  image: string;
+  color: string;
+}
+
 export interface IProject {
   projectName: string;
   image: string;
@@ -50,4 +78,28 @@ export interface IProject {
   team: {
     img: string;
   }[];
+}
+
+export interface IProgress {
+  id: string;
+  title: string;
+  percentage: number;
+  hours: string;
+  color: string;
+}
+
+export interface IClientCount {
+  title: string;
+  count: string;
+  color: string;
+  icon: IconType;
+}
+
+export interface IClient {
+  id: string;
+  company: string;
+  name: string;
+  designation: string;
+  img: string;
+  describe: string;
 }

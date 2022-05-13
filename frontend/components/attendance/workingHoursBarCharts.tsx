@@ -55,8 +55,8 @@ type Props = {};
 
 export default function WorkingHoursBarCharts({}: Props) {
   return (
-    <div>
+    <>
       <Bar options={options} data={data} height={528} width={1760} />
-    </div>
+    </>
   );
 }

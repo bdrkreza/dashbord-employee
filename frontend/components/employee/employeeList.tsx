@@ -11,20 +11,20 @@ interface IProps {
 export default function EmployeeList({ employee }: IProps) {
   return (
     <>
-      <div className="grid grid-flow-row-dense grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 grid-flow-row-dense xl:grid-cols-2 gap-10">
         {employee?.map(
           ({ name, img, designation, describe }: IEmployee, index) => {
             return (
               <div
                 key={index}
-                className="grid grid-flow-col grid-cols-3 w-full items-start  lg:items-center rounded bg-white shadow"
+                className="grid  grid-cols-1 grid-flow-row-dense md:grid-cols-3  xl:grid-cols-3 w-full items-start  lg:items-center rounded bg-white shadow"
               >
-                <div className="w-full h-full dark:border-gray-700 flex items-center justify-center  border-t lg:border-t-0 lg:border-r lg:border-l lg:rounded-r dark:bg-gray-700 bg-gray-100">
-                  <div className="rounded-full p-5  flex items-center justify-center  bg-slate-300 ">
-                    <Image height={150} width={150} src={img} alt="" />
+                <div className="w-full h-full dark:border-gray-700 flex items-center justify-center  border-t lg:border-t-0 lg:border-r lg:border-l lg:rounded-r dark:bg-gray-700 bg-gray-50">
+                  <div className="rounded-full p-5  flex items-center justify-center border-2 ">
+                    <Image height={110} width={110} src={img} alt="" />
                   </div>
                 </div>
-                <div className="w-full h-full col-span-2  dark:bg-gray-800 space-y-3 p-2 ">
+                <div className="w-full h-full  col-span-2  dark:bg-gray-800 space-y-3 p-2 ">
                   <h1 className="font-bold text-xl font-sans ml-1">{name}</h1>
                   <h2 className="bg-blue-200 rounded-md max-w-fit py-1 px-3">
                     {designation}

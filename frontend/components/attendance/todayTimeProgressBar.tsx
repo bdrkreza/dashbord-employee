@@ -6,12 +6,12 @@ type Props = {};
 
 const work = [
   {
-    work: "2",
-    color: "#cbd5e1",
+    work: "80",
+    color: "#5eead4",
   },
   {
-    work: "10",
-    color: "#5eead4",
+    work: "20",
+    color: "#cbd5e1",
   },
 ];
 
@@ -21,31 +21,16 @@ const data = {
       data: work.map((w) => w.work),
       backgroundColor: work.map((c) => c.color),
       borderWidth: 2,
-      cutout: "85%",
+      cutout: "80%",
       text: "23%",
     },
   ],
-};
-
-const centerText = {
-  id: "centerText",
-  afterDatasetsDraw(chart: any, args: any, options: any) {
-    const {
-      ctx,
-      chartArea: { left, right, top, bottom, width, height },
-    } = chart;
-    ctx.save();
-    ctx.font = "bolder 30px arial";
-    ctx.fillStyle = "red";
-    ctx.fillText("sales:", 100, 100);
-  },
 };
 
 const options = {
   maintainAspectRatio: false,
   responsive: true,
   cutoutPercentage: 84,
-  Plugins: [centerText],
 };
 
 export default function TodayTimeProgressBar({}: Props) {
@@ -64,8 +49,12 @@ export default function TodayTimeProgressBar({}: Props) {
         </button>
       </div>
 
-      <div className="flex items-center justify-center mb-5">
+      <div className="flex items-center justify-center mb-5 relative">
         <Doughnut options={options} data={data} width={150} height={200} />
+        <div className="absolute text-center">
+          <h1 className="text-lg font-bold ">Working</h1>
+          <h1 className="text-lg">80%</h1>
+        </div>
       </div>
       <div className="flex justify-around">
         <div className="flex items-center">
