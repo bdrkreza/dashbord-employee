@@ -1,6 +1,7 @@
 import React from "react";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { IoReloadCircle } from "react-icons/io5";
+import SalaryTable from "./salaryTable";
 import TabsButton from "./tabsButton";
 
 type Props = {};
@@ -43,27 +44,17 @@ export default function AddPayroll({}: Props) {
             <BsFillPlusCircleFill className="w-8 h-8 mr-2 text-blue-700 cursor-pointer" />
             <IoReloadCircle className="w-10 h-10 text-blue-700 cursor-pointer" />
           </div>
-          <TabsButton setOpenTab={setOpenTab} />
+          <TabsButton setOpenTab={setOpenTab} openTab={openTab} />
         </div>
         <hr className="divide-solid border-2 border-red-100 " />
       </div>
       <div className="mt-10">
         <div
-          className={`${
-            openTab === 1 ? "block" : "hidden"
-          } p-4 bg-gray-50 rounded-lg dark:bg-gray-800`}
-          id="profile"
+          className={`${openTab === 1 ? "block" : "hidden"} bg-gray-50 `}
           role="tabpanel"
           aria-labelledby="profile-tab"
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Profile tabs associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
+          <SalaryTable />
         </div>
         <div
           className={`${

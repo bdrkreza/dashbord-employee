@@ -1,26 +1,32 @@
 import React from "react";
 
 type Props = {
+  openTab: any;
   setOpenTab: any;
 };
 
-export default function TabsButton({ setOpenTab }: Props) {
+export default function TabsButton({ setOpenTab, openTab }: Props) {
   return (
     <div>
       <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul
-          className="flex flex-wrap -mb-px text-sm font-medium text-center"
+          className="flex flex-wrap -mb-px text-xl  font-serif  border-y-2 font-medium text-center"
           id="myTab"
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
-          <li className="mr-2" role="presentation">
+          <li className="" role="presentation">
             <button
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(1);
               }}
-              className="inline-block p-4 rounded-t-lg border-b-2"
+              className={
+                "inline-block py-5 px-8 rounded border-1 border-transparent" +
+                (openTab === 1
+                  ? "text-white bg-blue-300"
+                  : "text-blue-600 bg-white")
+              }
               id="profile-tab"
               data-tabs-target="#profile"
               type="button"
@@ -28,16 +34,21 @@ export default function TabsButton({ setOpenTab }: Props) {
               aria-controls="profile"
               aria-selected="false"
             >
-              Profile
+              Employee
             </button>
           </li>
-          <li className="mr-2" role="presentation">
+          <li className="" role="presentation">
             <button
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(2);
               }}
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              className={
+                "inline-block py-5 px-8 rounded border-1 border-transparent" +
+                (openTab === 2
+                  ? "text-white bg-blue-300"
+                  : "text-blue-600 bg-white")
+              }
               id="dashboard-tab"
               data-tabs-target="#dashboard"
               type="button"
@@ -45,16 +56,21 @@ export default function TabsButton({ setOpenTab }: Props) {
               aria-controls="dashboard"
               aria-selected="false"
             >
-              Dashboard
+              Invoice List
             </button>
           </li>
-          <li className="mr-2" role="presentation">
+          <li className="" role="presentation">
             <button
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(3);
               }}
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              className={
+                "inline-block py-5 px-10 rounded border-1 border-transparent" +
+                (openTab === 3
+                  ? "text-white bg-blue-300"
+                  : "text-blue-600 bg-white")
+              }
               id="settings-tab"
               data-tabs-target="#settings"
               type="button"
@@ -62,7 +78,7 @@ export default function TabsButton({ setOpenTab }: Props) {
               aria-controls="settings"
               aria-selected="false"
             >
-              Settings
+              Salary slip
             </button>
           </li>
         </ul>
