@@ -1,30 +1,32 @@
 import Image from "next/image";
 import React from "react";
 import { FaMoneyBillAlt } from "react-icons/fa";
-import { IInVoices } from "../../Types";
+import { IEmployeeSalary } from "../../Types";
 
 type Props = {
-  data: IInVoices[] | null;
+  data: IEmployeeSalary[] | null;
 };
 
-export default function ClientInvoice({ data }: Props) {
+export default function InvoiceList({ data }: Props) {
   return (
-    <div className="container w-3/4 m-auto">
-      {data?.map((invoice) => {
+    <div className="container w-3/4 m-auto text-center">
+      {data?.map((employee) => {
         return (
-          <div key={invoice.invoiceId} className="mt-5 border-2">
-            <div className="flex justify-between bg-white px-5  border-x-2 border-b-2 border-slate-300 py-4 rounded-md">
+          <div key={employee.payId} className="mt-5 border-2">
+            <div className="flex justify-between bg-slate-200 px-5  border-x-2 border-b-2 border-slate-300 py-2 rounded-md">
               <div className="flex space-x-5">
                 <Image
                   height={50}
-                  width={50}
-                  src={invoice.image}
+                  width={40}
+                  src={employee.img}
                   alt="profile-image"
                   className="h-full w-full shadow"
                 />
                 <div>
-                  <h1 className="font-semibold text-md">{invoice.company}</h1>
-                  <h1 className="text-lg mt-1 capitalize">{invoice.name}</h1>
+                  <h1 className="font-semibold text-lg">{employee.name}</h1>
+                  <h1 className="font-serif text-sm mt-2 ">
+                    {employee.designation}
+                  </h1>
                 </div>
               </div>
               <div>
@@ -33,7 +35,7 @@ export default function ClientInvoice({ data }: Props) {
                 </h1>
                 <div className="flex text-sm items-center space-x-2 justify-end mt-2">
                   <FaMoneyBillAlt className="w-5 h-5 text-gray-600" />
-                  <h1>${invoice.amount}</h1>
+                  <h1>${employee.amount}</h1>
                 </div>
               </div>
             </div>

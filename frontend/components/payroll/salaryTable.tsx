@@ -1,12 +1,16 @@
+import Image from "next/image";
 import React from "react";
 import { AiOutlineDownload } from "react-icons/ai";
 import { BsPrinter, BsShare } from "react-icons/bs";
 import { FiDelete, FiEdit, FiEye } from "react-icons/fi";
+import { IEmployeeSalary } from "../../Types";
 
-type Props = {};
+type Props = {
+  data: IEmployeeSalary[] | null;
+};
 
-export default function SalaryTable({}: Props) {
-  const color = "orange";
+export default function SalaryTable({ data }: Props) {
+  const color = "green";
   return (
     <>
       <>
@@ -139,82 +143,85 @@ export default function SalaryTable({}: Props) {
                 </tr>
               </thead>
               <tbody>
-                <tr className="h-24 border-gray-300 dark:border-gray-200 border-b text-md font-medium ">
-                  <td className="pr-1 whitespace-no-wrap text-gray-800 px-5 dark:text-gray-100  leading-4">
-                    #MC10023
-                  </td>
-                  <td className="pr-1 whitespace-no-wrap">
-                    <div className="flex items-center">
-                      <div className="h-8 w-8">
-                        <img
-                          src="https://tuk-cdn.s3.amazonaws.com/assets/components/advance_tables/at_1.png"
-                          alt
-                          className="h-full w-full rounded-full overflow-hidden shadow"
-                        />
-                      </div>
-                      <p className="ml-2 text-gray-800 dark:text-gray-100 tracking-normal leading-4 text-sm">
-                        Carrie Anthony
-                      </p>
-                    </div>
-                  </td>
-                  <td className="pr-1 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
-                    November-2022
-                  </td>
+                {data?.map(
+                  ({
+                    payId,
+                    date,
+                    amount,
+                    designation,
+                    img,
+                    month,
+                    name,
+                    payment,
+                  }) => {
+                    return (
+                      <tr
+                        key={payId}
+                        className="h-24 border-gray-300 dark:border-gray-200 border-b text-md font-medium "
+                      >
+                        <td className="pr-1 whitespace-no-wrap text-gray-800 px-5 dark:text-gray-100  leading-4">
+                          {payId}
+                        </td>
+                        <td className="pr-1 whitespace-no-wrap">
+                          <div className="flex items-center">
+                            <div className="h-8 w-8">
+                              <Image
+                                height={100}
+                                width={100}
+                                src={img}
+                                alt="profile-image"
+                                className="h-full w-full rounded-full overflow-hidden shadow"
+                              />
+                            </div>
+                            <p className="ml-2 text-gray-800 dark:text-gray-100 tracking-normal leading-4 text-sm">
+                              {name}
+                            </p>
+                          </div>
+                        </td>
+                        <td className="pr-1 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
+                          {month}
+                        </td>
 
-                  <td className="pr-1 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
-                    software Engineer
-                  </td>
-                  <td className="pr-1 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
-                    $28,000
-                  </td>
-                  <td className="pr-6 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
-                    02/03/20
-                  </td>
-                  <td className="pr-6">
-                    <h1
-                      className={`bg-${color}-100 text-${color}-700 border-1 -ml-2 rounded-xl px-4 text-xl py-1 max-w-fit`}
-                    >
-                      paid
-                    </h1>
-                  </td>
-                  <td>
-                    <div className="flex items-center">
-                      <a className="text-gray-600 dark:text-gray-400 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray">
-                        <FiEdit className="text-green-600 w-5 h-5" />
-                      </a>
-                      <a
-                        className="text-gray-600 dark:text-gray-400 mx-2 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        href="javascript: void(0)"
-                      >
-                        <FiEye className="w-6 h-6 text-blue-500" />
-                      </a>
-                      <a
-                        className="text-gray-600 dark:text-gray-400 mr-2 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        href="javascript: void(0)"
-                      >
-                        <AiOutlineDownload className="w-6 h-6 text-orange-700 " />
-                      </a>
-                      <a
-                        className="text-gray-600 dark:text-gray-400 mr-2 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        href="javascript: void(0)"
-                      >
-                        <BsPrinter className="w-6 h-6 text-purple-700 " />
-                      </a>
-                      <a
-                        className="text-red-500 p-2 mr-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        href="javascript: void(0)"
-                      >
-                        <BsShare className="w-6 h-6 text-blue-500" />
-                      </a>
-                      <a
-                        className="text-red-500 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        href="javascript: void(0)"
-                      >
-                        <FiDelete className="w-6 h-6 text-red-500" />
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                        <td className="pr-1 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
+                          {designation}
+                        </td>
+                        <td className="pr-1 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
+                          $ {amount}
+                        </td>
+                        <td className="pr-6 whitespace-no-wrap text-gray-800 dark:text-gray-100 tracking-normal leading-4">
+                          {date}
+                        </td>
+                        <td className="pr-6">
+                          {payment ? (
+                            <h1
+                              className={`bg-${color}-100 text-${color}-700 border-1 -ml-2 rounded-xl px-4 text-lg py-0 max-w-fit`}
+                            >
+                              paid
+                            </h1>
+                          ) : (
+                            <h1
+                              className={`bg-red-400 text-gray-100 border-1 -ml-2 rounded-xl px-4 text-lg py-0 max-w-fit`}
+                            >
+                              unpaid
+                            </h1>
+                          )}
+                        </td>
+                        <td>
+                          <div className="flex items-center">
+                            {menuItem.map(({ icon: Icon, color }, index) => (
+                              <a
+                                key={index}
+                                className="text-gray-600 dark:text-gray-400 mr-2 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
+                              >
+                                <Icon className={`text-${color}-500 w-5 h-5`} />
+                              </a>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  }
+                )}
               </tbody>
             </table>
           </div>
@@ -223,3 +230,30 @@ export default function SalaryTable({}: Props) {
     </>
   );
 }
+
+const menuItem = [
+  {
+    icon: FiEdit,
+    color: "green",
+  },
+  {
+    icon: FiEye,
+    color: "blue",
+  },
+  {
+    icon: AiOutlineDownload,
+    color: "orange",
+  },
+  {
+    icon: BsPrinter,
+    color: "purple",
+  },
+  {
+    icon: BsShare,
+    color: "blue",
+  },
+  {
+    icon: FiDelete,
+    color: "red",
+  },
+];

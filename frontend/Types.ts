@@ -8,6 +8,28 @@ export interface IStatus {
   icon: IconType;
 }
 
+export interface IInVoices {
+  invoiceId: string;
+  company: string;
+  name: string;
+  start_date: string;
+  end_date: string;
+  status: boolean;
+  amount: string;
+  image: string;
+  color: string;
+}
+
+export interface IExpenses {
+  expId: string;
+  image: string;
+  item: string;
+  amount: string;
+  order_by: string;
+  date: string;
+  from: string;
+  status: boolean;
+}
 export interface IAttendance {
   title: string;
   days: string;
@@ -47,6 +69,17 @@ export interface IEmployeeCount {
   count: string;
   color: string;
   icon: IconType;
+}
+
+export interface IEmployeeSalary {
+  name: string;
+  designation: string;
+  img: any;
+  amount: string;
+  payment: boolean;
+  payId: string;
+  date: string;
+  month: string;
 }
 
 export interface IDepartment {
