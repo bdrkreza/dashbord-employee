@@ -1,3 +1,4 @@
+import AddPayment from "./account/addPayment";
 import AddAttendance from "./attendance/addAttendance";
 import AttendanceTable from "./attendance/attendanceTable";
 import AttendanceTopBar from "./attendance/attendanceTopBar";
@@ -56,4 +57,5 @@ export {
   AddClient,
   ClientList,
   AddPayroll,
+  AddPayment,
 };

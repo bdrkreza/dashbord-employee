@@ -6,7 +6,7 @@ import manImg1 from "../../public/man-1.svg";
 import manImg2 from "../../public/man2.svg";
 import woman2 from "../../public/woman-2.svg";
 import woman1 from "../../public/woman1.svg";
-import { IEmployeeCount } from "../../Types";
+import { IEmployee, IEmployeeCount } from "../../Types";
 
 export const employee_api: IEmployeeCount[] = [
   {
@@ -35,7 +35,7 @@ export const employee_api: IEmployeeCount[] = [
   },
 ];
 
-export const employee_job = [
+export const employee_job: IEmployee[] = [
   {
     name: "Luke Short",
     designation: "UI/UX Designer",

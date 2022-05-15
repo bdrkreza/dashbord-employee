@@ -1,20 +1,27 @@
 import React from "react";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { IoReloadCircle } from "react-icons/io5";
+import { IEmployeeSalary } from "../../Types";
+import InvoiceList from "./invoiceList";
+import SalarySlip from "./salarySlip";
 import SalaryTable from "./salaryTable";
 import TabsButton from "./tabsButton";
 
-type Props = {};
+type Props = {
+  data: IEmployeeSalary[] | null;
+};
 
-export default function AddPayroll({}: Props) {
+export default function AddPayroll({ data }: Props) {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <div>
       <div className="mt-10">
         <div className="flex items-center justify-between px-14">
           <div className="flex items-center">
-            <h1 className="text-2xl font-sans font-bold mb-2">Payroll</h1>
-            <div className="p-4">
+            <h1 className="text-2xl font-sans font-bold mb-2 sm:mr-5">
+              Payroll
+            </h1>
+            <div className="p-4 hidden xl:block">
               <label htmlFor="table-search" className="sr-only">
                 Search
               </label>
@@ -54,24 +61,17 @@ export default function AddPayroll({}: Props) {
           role="tabpanel"
           aria-labelledby="profile-tab"
         >
-          <SalaryTable />
+          <SalaryTable data={data} />
         </div>
         <div
           className={`${
             openTab === 2 ? "block" : "hidden"
-          } p-4 bg-gray-50 rounded-lg dark:bg-gray-800`}
+          } p-4 bg-gray-50  rounded-lg dark:bg-gray-800`}
           id="dashboard"
           role="tabpanel"
           aria-labelledby="dashboard-tab"
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Dashboard tabs associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
+          <InvoiceList data={data} />
         </div>
         <div
           className={`${
@@ -81,14 +81,7 @@ export default function AddPayroll({}: Props) {
           role="tabpanel"
           aria-labelledby="settings-tab"
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <strong className="font-medium text-gray-800 dark:text-white">
-              Settings tabs associated content
-            </strong>
-            . Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
+          <SalarySlip />
         </div>
       </div>
     </div>

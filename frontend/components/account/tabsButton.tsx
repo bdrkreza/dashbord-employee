@@ -5,7 +5,7 @@ type Props = {
   setOpenTab: any;
 };
 
-export default function TabsButton({ setOpenTab, openTab }: Props) {
+export default function TabsButtonAccount({ setOpenTab, openTab }: Props) {
   return (
     <div>
       <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
@@ -34,7 +34,7 @@ export default function TabsButton({ setOpenTab, openTab }: Props) {
               aria-controls="profile"
               aria-selected="false"
             >
-              Employee
+              Clients
             </button>
           </li>
           <li className="" role="presentation">
@@ -78,7 +78,7 @@ export default function TabsButton({ setOpenTab, openTab }: Props) {
               aria-controls="settings"
               aria-selected="false"
             >
-              Salary slip
+              Expenses
             </button>
           </li>
         </ul>
