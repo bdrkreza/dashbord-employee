@@ -27,6 +27,7 @@ import AddProject from "./project/addProject";
 import ProjectCard from "./project/projectCard";
 import ProjectList from "./project/projectList";
 import ProjectTopBar from "./project/projectTopBar";
+import Setting from "./setting/setting";
 
 export {
   AppFooter,
@@ -58,4 +59,5 @@ export {
   ClientList,
   AddPayroll,
   AddPayment,
+  Setting,
 };
