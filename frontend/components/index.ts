@@ -22,11 +22,13 @@ import EmployeeList from "./employee/employeeList";
 import EmployeeTopBar from "./employee/employeeTopBar";
 import HolidaysTable from "./holidays/holidaysTable";
 import HolidaysTopBar from "./holidays/holidaysTopBar";
+import HrDashboard from "./management/HrDashboard";
 import AddPayroll from "./payroll/addPayroll";
 import AddProject from "./project/addProject";
 import ProjectCard from "./project/projectCard";
 import ProjectList from "./project/projectList";
 import ProjectTopBar from "./project/projectTopBar";
+import Setting from "./setting/setting";
 
 export {
   AppFooter,
@@ -36,6 +38,7 @@ export {
   ProjectSurvey,
   ClientSurvey,
   InvoiceTable,
+  HrDashboard,
   ProjectReportTable,
   ProjectList,
   ProjectTopBar,
@@ -58,4 +61,5 @@ export {
   ClientList,
   AddPayroll,
   AddPayment,
+  Setting,
 };

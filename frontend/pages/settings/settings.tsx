@@ -1,5 +1,10 @@
 import React from "react";
+import { Setting } from "../../components";
 
 export default function Settings() {
-  return <div>settings</div>;
+  return (
+    <div>
+      <Setting />
+    </div>
+  );
 }

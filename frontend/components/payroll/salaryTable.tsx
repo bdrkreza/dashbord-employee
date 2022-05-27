@@ -13,10 +13,10 @@ export default function SalaryTable({ data }: Props) {
   const color = "green";
   return (
     <>
-      <>
-        <div className="mx-auto  bg-white dark:bg-gray-800 shadow rounded">
-          <div className="flex flex-col lg:flex-row p-4 lg:p-8 justify-end items-start lg:items-stretch w-full">
-            <div className="w-full lg:w-2/3 flex flex-col lg:flex-row items-start lg:items-center justify-end">
+      <div className="container   mx-auto">
+        <div className="mx-auto flex justify-center mt-36 relative bg-black border dark:bg-gray-800 shadow rounded">
+          <div className="absolute flex -mt-20  bg-blue-200 py-5 px-5  justify-end items-start lg:items-stretch  rounded-xl w-11/12">
+            <div className="w-full lg:w-2/3 flex flex-row items-start lg:items-center justify-end">
               <div className="flex items-center lg:border-l lg:border-r border-gray-300 dark:border-gray-200 py-3 lg:py-0 lg:px-6">
                 <p
                   className="text-base text-gray-600 dark:text-gray-400"
@@ -226,7 +226,7 @@ export default function SalaryTable({ data }: Props) {
             </table>
           </div>
         </div>
-      </>
+      </div>
     </>
   );
 }
