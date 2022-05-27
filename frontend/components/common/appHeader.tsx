@@ -16,23 +16,6 @@ import Notification from "./header/notification";
 import Profile from "./header/profile";
 import Search from "./header/search";
 
-// let useClickOutSide = (handler: any) => {
-//   const domNode = React.useRef();
-//   React.useEffect(() => {
-//     let mayHandler = (event: any) => {
-//       if (domNode.current && !domNode?.current?.contains(event.target)) {
-//         handler();
-//       }
-//     };
-
-//     document.addEventListener("mousedown", mayHandler);
-//     return () => {
-//       document.removeEventListener("mousedown", mayHandler);
-//     };
-//   });
-//   return domNode;
-// };
-
 export default function AppHeader({ open, setOpen }: any) {
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState(false);
@@ -40,10 +23,6 @@ export default function AppHeader({ open, setOpen }: any) {
   const [notification, setNotification] = useState(false);
   const [language, setLanguage] = useState(false);
 
-  // let domNode = useClickOutSide(() => {
-  //   setSearch(false);
-  //   setProfile(false);
-  // });
   return (
     <React.Fragment>
       {/* Code block starts */}
