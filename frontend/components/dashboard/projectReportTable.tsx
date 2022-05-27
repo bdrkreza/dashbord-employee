@@ -128,12 +128,12 @@ export default function ProjectReportTable({ project }: IProps) {
                       </td>
                       <td className="pl-16">
                         <div className="flex -space-x-2  ">
-                          {team?.map((img: any, index: any) => (
+                          {team?.map(({ img }: any, index: any) => (
                             <div key={index} className="avatar-group">
                               <img
-                                key={img.img}
+                                key={img}
                                 className="shadow-md w-8 h-8 rounded-full"
-                                src={img.img}
+                                src={img}
                               />
                             </div>
                           ))}
@@ -149,7 +149,7 @@ export default function ProjectReportTable({ project }: IProps) {
                           </button>
                         ) : (
                           <button
-                            onClick={() => setShow(0)}
+                            onClick={() => setShow(null)}
                             className="focus:outline-none pl-7"
                           >
                             <BiDotsVertical className="h-5 w-5" />

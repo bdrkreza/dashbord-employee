@@ -42,14 +42,14 @@ const options: any = {
 
 export default function TotalEmployeeProgressBar({}: Props) {
   return (
-    <div>
-      <div className="flex items-center justify-center  relative">
+    <>
+      <div className="flex items-center justify-center">
         <Doughnut options={options} data={data} width={150} height={200} />
         <div className="absolute text-center">
           <h1 className="text-lg font-bold ">Person</h1>
           <h1 className="text-2xl">45</h1>
         </div>
       </div>
-    </div>
+    </>
   );
 }

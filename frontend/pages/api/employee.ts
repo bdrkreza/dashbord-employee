@@ -40,12 +40,14 @@ export const employee_job: IEmployee[] = [
     name: "Luke Short",
     designation: "UI/UX Designer",
     img: manImg1,
+    percentage: 40,
     describe:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
   },
   {
     name: "Lillian Powell",
     designation: "Quality Assurance",
+    percentage: 50,
     img: woman1,
     describe:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
@@ -53,6 +55,7 @@ export const employee_job: IEmployee[] = [
   {
     name: "John Hardacare",
     designation: "Developer",
+    percentage: 30,
     img: manImg2,
     describe:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
@@ -60,6 +63,7 @@ export const employee_job: IEmployee[] = [
   {
     name: "Rachel Parsons",
     designation: "Website Designer",
+    percentage: 70,
     img: woman2,
     describe:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
@@ -67,6 +71,7 @@ export const employee_job: IEmployee[] = [
   {
     name: "Ziul Rahman",
     designation: "Full Stack Developer",
+    percentage: 60,
     img: manImg1,
     describe:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",

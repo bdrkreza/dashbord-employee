@@ -62,6 +62,7 @@ export interface IEmployee {
   designation: string;
   img: any;
   describe: string;
+  percentage: number;
 }
 
 export interface IEmployeeCount {
