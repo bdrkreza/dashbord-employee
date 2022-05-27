@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const options = {
+const options: any = {
   maintainAspectRatio: false,
   legend: {
     display: false,
@@ -58,7 +58,7 @@ const options = {
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-export const data = {
+export const data: any = {
   labels,
   datasets: [
     {
@@ -74,7 +74,7 @@ export const data = {
     },
     {
       label: new Date().getFullYear() - 1,
-      fill: true,
+      fill: false,
       backgroundColor: "rgba(255, 206, 86, 0.2)",
       borderColor: "#ff9800",
       data: [40, 68, 86, 74, 56, 60, 87],

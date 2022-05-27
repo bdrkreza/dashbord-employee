@@ -14,7 +14,7 @@ const labels = [
   "November",
   "December",
 ];
-const data = {
+const data: any = {
   labels,
   datasets: [
     {
@@ -40,7 +40,7 @@ const data = {
   ],
 };
 
-const options = {
+const options: any = {
   plugins: {
     legend: {
       position: "bottom",
@@ -53,10 +53,12 @@ const options = {
 
 type Props = {};
 
-export default function WorkingHoursBarCharts({}: Props) {
+const WorkingHoursBarCharts: React.FunctionComponent = ({}: Props) => {
   return (
     <>
       <Bar options={options} data={data} height={528} width={1760} />
     </>
   );
-}
+};
+
+export default WorkingHoursBarCharts;

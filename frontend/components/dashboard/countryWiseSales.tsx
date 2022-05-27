@@ -3,7 +3,7 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-let options = {
+let options: any = {
   responsive: false,
   defaultFontSize: "14px",
   plugins: {
@@ -49,7 +49,7 @@ const Cdata: any = [
   },
 ];
 
-export const data = {
+export const data: any = {
   labels: Cdata.map((country: any) => country.name),
   datasets: [
     {

@@ -22,6 +22,7 @@ import EmployeeList from "./employee/employeeList";
 import EmployeeTopBar from "./employee/employeeTopBar";
 import HolidaysTable from "./holidays/holidaysTable";
 import HolidaysTopBar from "./holidays/holidaysTopBar";
+import HrDashboard from "./management/HrDashboard";
 import AddPayroll from "./payroll/addPayroll";
 import AddProject from "./project/addProject";
 import ProjectCard from "./project/projectCard";
@@ -37,6 +38,7 @@ export {
   ProjectSurvey,
   ClientSurvey,
   InvoiceTable,
+  HrDashboard,
   ProjectReportTable,
   ProjectList,
   ProjectTopBar,

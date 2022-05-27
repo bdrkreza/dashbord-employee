@@ -57,7 +57,7 @@ export default function AddPayroll({ data }: Props) {
       </div>
       <div className="mt-10">
         <div
-          className={`${openTab === 1 ? "block" : "hidden"} bg-gray-50 `}
+          className={`${openTab === 1 ? "block" : "hidden"}  `}
           role="tabpanel"
           aria-labelledby="profile-tab"
         >
