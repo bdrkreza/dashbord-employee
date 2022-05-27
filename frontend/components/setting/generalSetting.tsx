@@ -67,7 +67,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="firstName"
                       placeholder="John"
@@ -82,7 +81,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="lastName"
                       placeholder="Doe"
@@ -99,7 +97,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="email"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="emailAddress"
                       placeholder="youremail@example.com"
@@ -114,7 +111,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="phone"
                       placeholder="123-1234567"
@@ -146,7 +142,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="password"
                       placeholder="Enter your password"
@@ -161,7 +156,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="securityCode"
                       placeholder="Enter your security code"
@@ -178,7 +172,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="recoveryEmail"
                       placeholder="Your recovery email"
@@ -193,7 +186,6 @@ function GeneralSetting() {
                     </label>
                     <input
                       type="name"
-                      tabIndex="0"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="altPhone"
                       placeholder="Your alternate phone number"

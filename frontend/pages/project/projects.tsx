@@ -13,6 +13,7 @@ export default function Projects() {
     <div>
       <ProjectList />
       <AddProject />
+
       <ProjectCard project={project} />
     </div>
   );

@@ -27,7 +27,6 @@ import AddPayroll from "./payroll/addPayroll";
 import AddProject from "./project/addProject";
 import ProjectCard from "./project/projectCard";
 import ProjectList from "./project/projectList";
-import ProjectTopBar from "./project/projectTopBar";
 import Setting from "./setting/setting";
 
 export {
@@ -41,7 +40,6 @@ export {
   HrDashboard,
   ProjectReportTable,
   ProjectList,
-  ProjectTopBar,
   ProjectCard,
   AddProject,
   EmployeeTopBar,
