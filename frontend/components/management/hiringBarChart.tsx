@@ -109,68 +109,44 @@ ChartJS.register(
 // };
 
 const options: any = {
-  tooltips: {
-    displayColors: true,
-    callbacks: {
-      mode: "x",
-    },
+  title: {
+    display: true,
+    text: "This is title",
   },
+  backgroundColor: "#cfcfcf",
   scales: {
-    xAxes: [
-      {
-        stacked: true,
-        gridLines: {
-          display: false,
-        },
-      },
-    ],
-    yAxes: [
-      {
-        stacked: true,
-        ticks: {
-          beginAtZero: true,
-        },
-        type: "linear",
-      },
-    ],
+    xAxes: [{ stacked: true }],
+    yAxes: [{ stacked: true }],
   },
-  responsive: true,
-  maintainAspectRatio: false,
-  legend: { position: "bottom" },
 };
 
 const data: any = {
-  labels: [
-    "<  1",
-    "1 - 2",
-    "3 - 4",
-    "5 - 9",
-    "10 - 14",
-    "15 - 19",
-    "20 - 24",
-    "25 - 29",
-    "> - 29",
-  ],
+  labels: ["Jan", "Feb", "Mar", "Apr", "May"],
   datasets: [
     {
-      label: "Employee",
-      backgroundColor: "#caf270",
-      data: [12, 59, 5, 56, 58, 12, 59, 87, 45],
+      data: [1, 5, 3],
+      label: "Jan",
+      backgroundColor: "#3e95cd",
     },
     {
-      label: "Engineer",
-      backgroundColor: "#45c490",
-      data: [12, 59, 5, 56, 58, 12, 59, 85, 23],
+      data: [10, 5],
+      label: "Feb",
+      backgroundColor: "#8e5ea2",
     },
     {
-      label: "Government",
-      backgroundColor: "#008d93",
-      data: [12, 59, 5, 56, 58, 12, 59, 65, 51],
+      data: [4, 8],
+      label: "Mar",
+      backgroundColor: "#4287f5",
     },
     {
-      label: "Political parties",
-      backgroundColor: "#2e5468",
-      data: [12, 59, 5, 56, 58, 12, 59, 12, 74],
+      data: [7],
+      label: "Apr",
+      backgroundColor: "#23ebbc",
+    },
+    {
+      data: [3, 1, 5, 0, 7],
+      label: "May",
+      backgroundColor: "#e63057",
     },
   ],
 };
@@ -179,8 +155,9 @@ type Props = {};
 
 export default function HiringBarChart({}: Props) {
   return (
-    <div>
-      <Bar options={options} data={data} height={220} />
+    <div className="bg-white p-5 w-full rounded-xl border shadow">
+      <h1 className="text-2xl font-bold">Top Hiring Sources</h1>
+      <Bar options={options} data={data} height={80} />
     </div>
   );
 }

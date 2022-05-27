@@ -8,8 +8,8 @@ type Props = {};
 
 export default function EmployeeCount({}: Props) {
   return (
-    <div className="grid lg:grid-cols-2 space-x-5 ">
-      <div className="bg-white mt-5 rounded-md border-2 shadow">
+    <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="bg-white  rounded-md border-2 shadow">
         <h1 className="font-semibold text-2xl mt-3 ml-10">
           Employees Availability
         </h1>
@@ -26,7 +26,7 @@ export default function EmployeeCount({}: Props) {
           ))}
         </div>
       </div>
-      <div className="bg-white mt-5 rounded-md border-2 shadow">
+      <div className="bg-white  mt-5 lg:mt-0 rounded-md border-2 ml-0 lg:ml-5  shadow">
         <h1 className="font-semibold text-2xl mt-3 ml-10">Total Employees</h1>
         <TotalEmployeeProgressBar />
       </div>
