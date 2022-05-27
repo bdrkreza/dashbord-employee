@@ -16,22 +16,22 @@ import Notification from "./header/notification";
 import Profile from "./header/profile";
 import Search from "./header/search";
 
-let useClickOutSide = (handler: any) => {
-  const domNode = React.useRef();
-  React.useEffect(() => {
-    let mayHandler = (event: any) => {
-      if (domNode.current && !domNode.current.contains(event.target)) {
-        handler();
-      }
-    };
+// let useClickOutSide = (handler: any) => {
+//   const domNode = React.useRef();
+//   React.useEffect(() => {
+//     let mayHandler = (event: any) => {
+//       if (domNode.current && !domNode?.current?.contains(event.target)) {
+//         handler();
+//       }
+//     };
 
-    document.addEventListener("mousedown", mayHandler);
-    return () => {
-      document.removeEventListener("mousedown", mayHandler);
-    };
-  });
-  return domNode;
-};
+//     document.addEventListener("mousedown", mayHandler);
+//     return () => {
+//       document.removeEventListener("mousedown", mayHandler);
+//     };
+//   });
+//   return domNode;
+// };
 
 export default function AppHeader({ open, setOpen }: any) {
   const [show, setShow] = useState(false);
@@ -40,17 +40,14 @@ export default function AppHeader({ open, setOpen }: any) {
   const [notification, setNotification] = useState(false);
   const [language, setLanguage] = useState(false);
 
-  let domNode = useClickOutSide(() => {
-    setSearch(false);
-    setProfile(false);
-  });
+  // let domNode = useClickOutSide(() => {
+  //   setSearch(false);
+  //   setProfile(false);
+  // });
   return (
     <React.Fragment>
       {/* Code block starts */}
-      <nav
-        className="w-full bg-gray-800  fixed shadow-md transition-all duration-300  z-10 w-ful "
-        ref={domNode}
-      >
+      <nav className="w-full bg-gray-800  fixed shadow-md transition-all duration-300  z-10 w-ful ">
         <div className="container px-6 h-16 flex justify-between items-center lg:items-stretch mx-auto">
           <div className="flex items-center justify-between ">
             {/* SideBar Toggle */}
