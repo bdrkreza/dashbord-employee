@@ -1,5 +1,6 @@
 import React from "react";
 import EmployeeCount from "./employeeCount";
+import HiringBarChart from "./hiringBarChart";
 import ManagementAside from "./managementAside";
 import TopBarManage from "./topBar";
 
@@ -11,6 +12,7 @@ export default function HrDashboard({}: Props) {
       <div className="xl:col-span-3 w-full h-full bg-gray-100 md:p-10 p-4 rounded-xl">
         <TopBarManage />
         <EmployeeCount />
+        <HiringBarChart />
       </div>
       <div className="bg-gray-100">
         <ManagementAside />
