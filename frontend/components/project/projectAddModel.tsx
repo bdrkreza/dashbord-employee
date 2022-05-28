@@ -1,4 +1,7 @@
-export default function ProjectAddModel({ onCancel }: any) {
+type Props = {
+  onCancel: () => void;
+};
+export default function ProjectAddModel({ onCancel }: Props) {
   return (
     <>
       <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
@@ -6,14 +9,22 @@ export default function ProjectAddModel({ onCancel }: any) {
         <div className="relative w-full py-5  bg-white my-6 mx-auto max-w-3xl">
           <div className="px-7">
             <p className="text-xl font-semibold leading-tight text-gray-800">
-              Add
+              Create New Project
             </p>
             <div className="grid w-full grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-7 mt-7 ">
-              <div>
-                <p className="text-base font-medium leading-none text-gray-800">
-                  Project Title
-                </p>
-                <input className="w-full p-3 mt-4 border border-gray-300 rounded outline-none focus:bg-gray-50" />
+              <div className="relative z-0">
+                <input
+                  type="text"
+                  id="floating_standard"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                />
+                <label
+                  htmlFor="floating_standard"
+                  className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Project Name
+                </label>
               </div>
               <div>
                 <p className="text-base font-medium leading-none text-gray-800">
