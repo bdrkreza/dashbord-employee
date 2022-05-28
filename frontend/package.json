@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@material-tailwind/react": "0.3.4",
     "chart.js": "^3.7.1",
     "next": "12.1.5",
     "react": "18.1.0",
