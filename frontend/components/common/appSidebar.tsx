@@ -10,7 +10,7 @@ export default function AppSidebar({ open }: any) {
       <div
         className={`${
           open ? "w-72" : "w-20"
-        } duration-300 h-screen bg-gray-800 relative p-5 pt-8`}
+        } duration-300 h-screen bg-gray-800 relative p-5  md:block hidden  pt-8`}
       >
         {/* brand logo */}
         <div className="flex gap-x-4 items-center justify-center">

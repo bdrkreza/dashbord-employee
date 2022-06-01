@@ -17,10 +17,15 @@ export default function HolidaysTopBar({}: Props) {
   return (
     <>
       <div className="mt-10">
-        <div className="flex items-center justify-between px-14">
+        <h1 className="text-2xl font-sans font-bold mb-2 text-center  underline md:hidden">
+          Holidays
+        </h1>
+        <div className="flex items-center justify-between px-0 lg:px-14">
           <div className="flex items-center">
-            <h1 className="text-2xl font-sans font-bold mb-2">Holidays</h1>
-            <div className="p-4">
+            <h1 className="text-2xl font-sans font-bold mb-2  md:block hidden">
+              Holidays
+            </h1>
+            <div className="pb-2 md:px-5">
               <label htmlFor="table-search" className="sr-only">
                 Search
               </label>
@@ -42,13 +47,14 @@ export default function HolidaysTopBar({}: Props) {
                 <input
                   type="text"
                   id="table-search"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-24 lg:w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search for items"
                 />
               </div>
             </div>
-            <BsFillPlusCircleFill className="w-8 h-8 mr-2 text-blue-700 cursor-pointer" />
-            <IoReloadCircle className="w-10 h-10 text-blue-700 cursor-pointer" />
+
+            <BsFillPlusCircleFill className="w-8 h-8 mr-2 text-blue-700 cursor-pointer hidden md:block" />
+            <IoReloadCircle className="w-10 h-10 text-blue-700 cursor-pointer hidden md:block" />
           </div>
           <button
             onClick={handleShowModal}

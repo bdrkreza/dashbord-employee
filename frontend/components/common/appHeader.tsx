@@ -26,8 +26,8 @@ export default function AppHeader({ open, setOpen }: any) {
   return (
     <React.Fragment>
       {/* Code block starts */}
-      <nav className="w-full bg-gray-800  fixed shadow-md transition-all duration-300  z-10 w-ful ">
-        <div className="container px-6 h-16 flex justify-between items-center lg:items-stretch mx-auto">
+      <nav className="w-full h-20 bg-gray-800  -mt-20 fixed shadow-md transition-all duration-300   z-10 ">
+        <div className="container px-6 h-20 flex justify-between items-center lg:items-stretch mx-auto">
           <div className="flex items-center justify-between ">
             {/* SideBar Toggle */}
             <button
